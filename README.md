@@ -76,6 +76,11 @@ http://testphp.vulnweb.com/
 
 ---
 
+## Web application
+
+![Screenshot 2025-06-12 133710](https://github.com/user-attachments/assets/9f477a48-c59d-4eb6-a0be-55bf28c38abe)
+
+
 ## 🧪 Sample Output
 
 ```json
@@ -126,5 +131,3 @@ http://testphp.vulnweb.com/
 ## 🛡️ Disclaimer
 
 This tool is intended for **educational and ethical testing purposes only**. Do **not** use it on websites you do not own or have explicit permission to test.
-
----
