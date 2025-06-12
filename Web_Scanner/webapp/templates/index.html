@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Vulnerability Scanner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #34495e;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-left: 6px solid #e74c3c;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        code {
+            background-color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                flex-direction: column;
+            }
+
+            input[type="text"], button {
+                width: 100%;
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+
+            input[type="text"] {
+                border-radius: 8px;
+            }
+
+            button {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Vulnerability Scanner</h1>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL to scan" required>
+            <button type="submit">🔍 Scan</button>
+        </form>
+
+        {% if results %}
+        <h2>🛡️ Scan Results</h2>
+        <ul>
+            {% for res in results %}
+            <li>
+                <strong>{{ res[0] }}</strong> vulnerability found at <code>{{ res[1] }}</code><br>
+                <strong>Payload:</strong> <code>{{ res[2] }}</code>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
